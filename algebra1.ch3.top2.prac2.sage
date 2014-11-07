@@ -1,0 +1,115 @@
+'''
+this is 2-step solving for x, division
+presented in 12 ways:
+we have 3 ways of showing the division:
+x/a, 1/a * x, x * 1/a
+2 signs we can have, + and -
+and c can either be at the front or the back
+
+a:-10 to 10 excluding 0
+x:-10 to 10
+b:-10 to 10 excluding 0
+x = (c-b)/a
+'''
+
+attach yaml_format.sage
+import random
+
+myFile = open('algebra1.ch3.top2.prac2.txt','w')
+create_html_html_multiple_question_set(myFile)
+myFile.close()
+myFile = open('algebra1.ch3.top2.prac2.txt','a')
+
+def solve_for_x_two_step_divison(a,b,c):
+	x = a*(c-b)
+	distractors = [-x, a*(c+b), -a*(c+b), b-c, c+b, -c-b, c-b]
+	return [x, distractors]
+	
+def format_solve_for_x_two_step_divison(a,b,c,answer_list):
+	answer_list_strings = ["\( " + latex(element) + "\)" for element in answer_list]
+	style = random.randint(1,8)
+	if style == 1:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ - \; \\frac{x}{" + latex(-a) + "}\; + \;" + latex(b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ \\frac{x}{" + latex(a) + "}\; + \;" + latex(b) + " = " + latex(c) + " \]"
+	if style == 2:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ - \; \\frac{x}{" + latex(-a) + "}\; - \;" + latex(-b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ \\frac{x}{" + latex(a) + "}\; - \;" + latex(-b) + " = " + latex(c) + " \]"
+	if style == 3:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ - \; \\frac{1}{" + latex(-a) + "} \cdot x \; + \;" + latex(b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ \\frac{1}{" + latex(a) + "} \cdot x \; + \;" + latex(b) + " = " + latex(c) + " \]"
+	if style == 4:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ - \; \\frac{1}{" + latex(-a) + "} \cdot x \; - \;" + latex(-b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ \\frac{1}{" + latex(a) + "} \cdot x \; - \;" + latex(-b) + " = " + latex(c) + " \]"
+	if style == 5:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ x \cdot - \; \\frac{1}{" + latex(-a) + "} \; + \;" + latex(b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ x \cdot \\frac{1}{" + latex(a) + "} \; + \;" + latex(b) + " = " + latex(c) + " \]"
+	if style == 6:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ x \cdot - \; \\frac{1}{" + latex(-a) + "} \; - \;" + latex(-b) + " = " + latex(c) + " \]"
+		else:
+			question_string = "\[ x \cdot \\frac{1}{" + latex(a) + "} \; - \;" + latex(-b) + " = " + latex(c) + " \]"
+	if style == 7: 
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = - \; \\frac{x}{" + latex(-a) + "}\; + \;" + latex(b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = \\frac{x}{" + latex(a) + "}\; + \;" + latex(b) + " \]"
+	if style == 8: 
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = - \; \\frac{x}{" + latex(-a) + "}\; - \;" + latex(-b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = \\frac{x}{" + latex(a) + "}\; - \;" + latex(-b) + " \]"
+	if style == 9: 
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = - \; \\frac{1}{" + latex(-a) + "} \cdot x \; + \;" + latex(b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = \\frac{1}{" + latex(a) + "} \cdot x \; + \;" + latex(b) + " \]"
+	if style == 10: 
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = - \; \\frac{1}{" + latex(-a) + "} \cdot x \; - \;" + latex(-b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = \\frac{1}{" + latex(a) + "} \cdot x \; - \;" + latex(-b) + " \]"
+	if style == 11: 
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = x \cdot - \; \\frac{1}{" + latex(-a) + "} \; + \;" + latex(b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = x \cdot \\frac{1}{" + latex(a) + "} \; + \;" + latex(b) + " \]"
+	if style == 12:
+		if a < 0 and random.random() < 0.5:
+			question_string = "\[ " + latex(c) + " = x \cdot - \; \\frac{1}{" + latex(-a) + "} \; - \;" + latex(-b) + " \]"
+		else:
+			question_string = "\[ " + latex(c) + " = x \cdot \\frac{1}{" + latex(a) + "} \; - \;" + latex(-b) + " \]"
+	return [question_string,answer_list_strings]
+	
+a_range = range(-10,10)
+b_range = range(-10,10)
+c_range = range(-10,10)
+a_range.remove(0)
+b_range.remove(0)
+
+proportion = 200.0/(len(a_range)*len(b_range)*len(c_range))
+print str(len(a_range)*len(b_range)*len(c_range)) + " possible questions"
+
+def wrapper():
+	question_count = 0
+	for a in a_range:
+		for b in b_range:
+			for c in c_range:
+				if random.random() < proportion:
+					[answer,distractors]= solve_for_x_two_step_divison(a,b,c)
+					answer_list= make_answer_list(answer,distractors,3)
+					if answer_list:
+						[question_string,answer_list_strings]=format_solve_for_x_two_step_divison(a,b,c,answer_list)
+						insert_html_html_multiple_question("Solve for \(x\)",question_string,answer_list_strings,myFile)
+						question_count += 1
+	myFile.close()
+	print str(question_count) + " questions printed to file"
